@@ -357,7 +357,7 @@ NAN_METHOD(WriteInt64) {
   } else if (in->IsString()) {
     char *endptr, *str;
     int base = 0;
-    String::Utf8Value _str(v8::Isolate::GetCurrent(), in);
+    String::Utf8Value _str(in);
     str = *_str;
 
     errno = 0;     /* To distinguish success/failure after call */
@@ -444,7 +444,7 @@ NAN_METHOD(WriteUInt64) {
   } else if (in->IsString()) {
     char *endptr, *str;
     int base = 0;
-    String::Utf8Value _str(v8::Isolate::GetCurrent(), in);
+    String::Utf8Value _str(in);
     str = *_str;
 
     errno = 0;     /* To distinguish success/failure after call */
